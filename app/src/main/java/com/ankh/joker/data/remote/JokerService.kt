@@ -1,13 +1,11 @@
 package com.ankh.joker.data.remote
 
-import androidx.lifecycle.LiveData
-import com.ankh.joker.data.model.Joke
-import com.ankh.joker.data.model.JokeEntity
+import com.ankh.joker.data.model.JokesEntity
 import retrofit2.Response
 import retrofit2.http.GET
 
 interface JokerService {
 
-    @GET("joke/Any?type=single")
-    suspend fun getSingleJoke(): Response<JokeEntity>
+    @GET("joke/Any?type=single&amount=10")
+    suspend fun getJokes(): Response<JokesEntity>
 }

@@ -2,4 +2,5 @@
 <resources>
     <dimen name="default_margin">16dp</dimen>
     <dimen name="text_medium">20sp</dimen>
+    <dimen name="rv_bottom_margin">40dp</dimen>
 </resources>

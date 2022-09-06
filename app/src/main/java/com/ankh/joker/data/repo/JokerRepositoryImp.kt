@@ -15,9 +15,9 @@ class JokerRepositoryImp(private val service: JokerService) : IJokerRepository {
     override suspend fun launchSingleJoke() {
         jokeState.postValue(JokeState.Loading)
         when {
-            service.getSingleJoke().isSuccessful -> {
-                service.getSingleJoke().body()?.let { jokeEntity ->
-                    jokeState.postValue(JokeState.Success(jokeEntity))
+            service.getJokes().isSuccessful -> {
+                service.getJokes().body()?.let { jokes->
+                    jokeState.postValue(JokeState.Success(jokes.jokes))
                 }
             }
             else -> {

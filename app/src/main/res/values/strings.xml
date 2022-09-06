@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Joker</string>
 
-    <string name="txt_next">Next</string>
+    <string name="txt_refresh">Refresh</string>
     <string name="txt_loading">Loading ....</string>
     <string name="txt_failure">Failed, please try again</string>
 </resources>
