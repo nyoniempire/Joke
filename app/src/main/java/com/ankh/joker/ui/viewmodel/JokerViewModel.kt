@@ -2,18 +2,15 @@ package com.ankh.joker.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.ankh.joker.data.remote.JokerClient
-import com.ankh.joker.data.remote.JokerService
-import com.ankh.joker.data.repo.JokerRepositoryImp
-import com.ankh.joker.domain.JokeState
+import com.ankh.joker.domain.repo.IJokerRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class JokerViewModel : ViewModel() {
-
-    //inject service
-    private val service = JokerClient.getClient().create(JokerService::class.java)
-    private val repo = JokerRepositoryImp(service)
+@HiltViewModel
+class JokerViewModel @Inject constructor(val repo: IJokerRepository) :
+    ViewModel() {
 
     val jokeState = repo.getSingleJoke()
 

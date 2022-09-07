@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ankh.joker.R
@@ -12,10 +13,14 @@ import com.ankh.joker.databinding.ActivityMainBinding
 import com.ankh.joker.domain.JokeState
 import com.ankh.joker.ui.adapter.JokesAdapter
 import com.ankh.joker.ui.viewmodel.JokerViewModel
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-    private val jokerViewModel = JokerViewModel()
+    private val jokerViewModel: JokerViewModel by viewModels()
+
     private lateinit var mainBinding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

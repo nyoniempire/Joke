@@ -6,13 +6,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object JokerClient {
 
-    fun getClient(): Retrofit {
-        val client = OkHttpClient.Builder().build()
-        val baseUrl = "https://v2.jokeapi.dev/"
-        return Retrofit.Builder()
-            .baseUrl(baseUrl)
-            .addConverterFactory(GsonConverterFactory.create())
-            .client(client)
-            .build()
-    }
+    /*fun getClient(): Retrofit {
+        val client =
+
+    }*/
 }
