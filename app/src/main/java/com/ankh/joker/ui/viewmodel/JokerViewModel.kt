@@ -12,11 +12,11 @@ import javax.inject.Inject
 class JokerViewModel @Inject constructor(private val repo: IJokerRepository) :
     ViewModel() {
 
-    val jokeState = repo.getSingleJoke()
+    val jokeState = repo.getSingleJokes()
 
     fun getJokes() {
         viewModelScope.launch(Dispatchers.IO) {
-            repo.launchSingleJoke()
+            repo.launchSingleJokes()
         }
     }
 }

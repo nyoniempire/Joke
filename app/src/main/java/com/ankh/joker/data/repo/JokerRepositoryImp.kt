@@ -10,9 +10,9 @@ class JokerRepositoryImp(private val service: JokerService) : IJokerRepository {
 
     val jokeState = MutableLiveData<JokeState>()
 
-    override fun getSingleJoke(): LiveData<JokeState> = jokeState
+    override fun getSingleJokes(): LiveData<JokeState> = jokeState
 
-    override suspend fun launchSingleJoke() {
+    override suspend fun launchSingleJokes() {
         jokeState.postValue(JokeState.Loading)
         when {
             service.getJokes().isSuccessful -> {

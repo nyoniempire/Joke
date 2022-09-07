@@ -5,7 +5,7 @@ import com.ankh.joker.domain.JokeState
 
 interface IJokerRepository {
 
-    fun getSingleJoke(): LiveData<JokeState>
+    fun getSingleJokes(): LiveData<JokeState>
 
-    suspend fun launchSingleJoke()
+    suspend fun launchSingleJokes()
 }
