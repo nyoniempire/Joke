@@ -1,7 +1,7 @@
 package com.ankh.joker.data.model
 
-data class JokesEntity(
+data class Jokes(
     val error: Boolean,
     val amount: Long,
-    val jokes: List<JokeEntity>
+    val jokes: List<Joke>
 )

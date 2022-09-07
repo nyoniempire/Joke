@@ -5,15 +5,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.ankh.joker.R
-import com.ankh.joker.data.model.JokeEntity
+import com.ankh.joker.data.model.Joke
 import com.google.android.material.textview.MaterialTextView
 
-class JokesAdapter(private val jokes: List<JokeEntity>) :
+class JokesAdapter(private val jokes: List<Joke>) :
     RecyclerView.Adapter<JokesAdapter.JokesViewHolder>() {
 
     class JokesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val tvJoke = itemView.findViewById<MaterialTextView>(R.id.tv_joke)
-        fun bind(joke: JokeEntity) {
+        fun bind(joke: Joke) {
             tvJoke.text = joke.joke
         }
     }

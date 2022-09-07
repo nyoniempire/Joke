@@ -1,11 +1,11 @@
 package com.ankh.joker.data.model
 
-data class JokeEntity(
+data class Joke(
     val error: Boolean,
     val category: String,
     val type: String,
     val joke: String,
-    val flags: FlagsEntity,
+    val flags: Flags,
     val id: Long,
     val safe: Boolean,
     val lang: String

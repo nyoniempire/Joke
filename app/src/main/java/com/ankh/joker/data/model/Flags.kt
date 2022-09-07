@@ -1,6 +1,6 @@
 package com.ankh.joker.data.model
 
-data class FlagsEntity(
+data class Flags(
     val nsfw: Boolean,
     val religious: Boolean,
     val political: Boolean,

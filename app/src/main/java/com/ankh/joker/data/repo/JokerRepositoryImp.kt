@@ -8,7 +8,7 @@ import com.ankh.joker.domain.repo.IJokerRepository
 
 class JokerRepositoryImp(private val service: JokerService) : IJokerRepository {
 
-    private val jokeState = MutableLiveData<JokeState>()
+    val jokeState = MutableLiveData<JokeState>()
 
     override fun getSingleJoke(): LiveData<JokeState> = jokeState
 

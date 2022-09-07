@@ -2,19 +2,17 @@ package com.ankh.joker.ui.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ankh.joker.R
-import com.ankh.joker.data.model.JokeEntity
+import com.ankh.joker.data.model.Joke
 import com.ankh.joker.databinding.ActivityMainBinding
 import com.ankh.joker.domain.JokeState
 import com.ankh.joker.ui.adapter.JokesAdapter
 import com.ankh.joker.ui.viewmodel.JokerViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -49,7 +47,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun setupAdapter(jokes: List<JokeEntity>) {
+    private fun setupAdapter(jokes: List<Joke>) {
         mainBinding.rvJokes.apply {
             adapter = JokesAdapter(jokes)
             layoutManager =

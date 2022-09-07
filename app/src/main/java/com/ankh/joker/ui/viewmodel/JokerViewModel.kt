@@ -9,7 +9,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class JokerViewModel @Inject constructor(val repo: IJokerRepository) :
+class JokerViewModel @Inject constructor(private val repo: IJokerRepository) :
     ViewModel() {
 
     val jokeState = repo.getSingleJoke()
