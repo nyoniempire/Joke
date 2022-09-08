@@ -12,6 +12,7 @@ import com.ankh.joker.databinding.ActivityMainBinding
 import com.ankh.joker.domain.JokeState
 import com.ankh.joker.ui.adapter.JokesAdapter
 import com.ankh.joker.ui.viewmodel.JokerViewModel
+import com.ankh.joker.util.CheckInternetConnection
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -44,6 +45,15 @@ class MainActivity : AppCompatActivity() {
 
         mainBinding.btnRefresh.setOnClickListener {
             jokerViewModel.getJokes()
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        CheckInternetConnection(this).apply {
+            if (!isInternetConnected())
+                showErrorSnackBar(mainBinding.root)
+
         }
     }
 
